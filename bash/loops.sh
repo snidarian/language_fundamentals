@@ -32,15 +32,14 @@ until [ $num -gt 10 ]; do
 done
 
 
-
+# Looping through the contents of an array
 prime=(2 3 5 7 11 13 17 19 23 29)
 for i in "${prime[@]}"; do
 	echo $i
 done 
 
 
-
-
+# C style for loop with a conditional break statement
 for ((i=1;i<=10;i++)); do
 	echo $i
 	if [ $i -eq 3 ]; then
@@ -48,7 +47,7 @@ for ((i=1;i<=10;i++)); do
 	fi
 done
 
-
+# C style for loop demonstrating the use of 'continue' statement
 for ((i=0;i<=10;i++)); do
 	if [ $(($i % 2)) -ne 1 ]; then
 		continue
