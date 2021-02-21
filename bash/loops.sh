@@ -1,31 +1,30 @@
 #! /usr/bin/bash
 
 
+# C style bash for loop
 for ((i = 0 ; i < 10 ; i++)); do
 	echo "Hello Friend"
 done
 
 
-
+# loop in range
 for i in {1..10}; do
 	echo "Hello Friend"
 done
 
-
-
+# Iterative loop
 for i in /var/*; do
 	echo $i 
 done
 
-
-
+# while loop
 num=1
 while [ $num -le 10 ]; do
 	echo $(($num * 3))
 	num=$(($num+1))
 done
 
-
+# until loop
 num=1
 until [ $num -gt 10 ]; do
 	echo $(($num * 3))
