@@ -1,0 +1,20 @@
+#! /usr/bin/bash
+
+# demonstrated use of optional arguments in cli bash scripting
+
+
+
+# Defaults to value after ':-' if argument $n is not supplied
+ARG1=${1:-value}
+ARG2=${2:"string"}
+ARG3=${3:347}
+ARG4=${4:-$(date)}
+
+
+echo "$ARG1"
+echo "$ARG2"
+echo "$ARG3"
+echo "$ARG4"
+
+
+
