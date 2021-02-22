@@ -1,4 +1,4 @@
-#! python3
+#! /usr/bin/python3
 
 from colorama import init
 from colorama import Fore, Back, Style
