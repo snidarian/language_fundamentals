@@ -41,7 +41,8 @@ int main()
     */
 
     int arr[] = { 1, 2, 3, 4, 7, 98, 0, 12, 35, 99, 14 }; 
-    printf("Number of elements:%lu ", sizeof(arr) / sizeof(arr[0])); 
+    printf("Number of elements = %lu \n", sizeof(arr) / sizeof(arr[0])); 
+    printf("each element in this array is %d bytes\n", sizeof(arr[0]));
 
     /*
     2. To allocate a block of memory dynamically
@@ -56,7 +57,6 @@ int main()
     return 0;
 
 } 
-
 
 
 
