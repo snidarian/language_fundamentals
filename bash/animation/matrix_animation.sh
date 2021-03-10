@@ -7,27 +7,7 @@ random_chars=( 4 3 6 7 8 2 1 5 9 4 0 9 3 9 1 0 2 0 3 4 1 5 0 9 5 A R E Q Y T U C
 
 
 while [ 1 ]; do
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
-    echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
+    
     echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
     echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
     echo -ne "${random_chars[$(shuf -i 0-89 -n 1)]}"
