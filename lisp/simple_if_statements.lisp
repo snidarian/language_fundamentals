@@ -3,6 +3,7 @@
 
 (defvar a (read))
 
+;;; (if (condition) (if condition True) (else condition))
 (if (= a 15) (format t "~% a is 15") (format t "~% a is not 15"))
 
 (if (= a 20) (format t "~% A is 20") (format t "~% a is not 20"))
