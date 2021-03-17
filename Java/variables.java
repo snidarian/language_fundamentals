@@ -38,7 +38,8 @@ public class variables {
 
         System.out.println(g);
         System.out.println(h);
-
+        
+        // This print statement highlights Java's weakness with regard to supporting calculations of decimal data.
         System.out.println(e + c);
         System.out.println(a + c + d);
         System.out.println(b);
