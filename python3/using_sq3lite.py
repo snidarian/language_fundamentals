@@ -63,7 +63,7 @@ while True:
 
 
 # The following statements are necessary for saving results in the database.
-
+# .commit method is absolutely necessary if you want the data modified to remain in persistent storage
 connection.commit()
 
 
