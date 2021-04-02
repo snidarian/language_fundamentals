@@ -1,5 +1,5 @@
 # Language_Fundamentals
-Syntax basics in all languages stored as single modular files
+Syntax basics in all languages stored as single atomic files
 
 
 #### Topics
