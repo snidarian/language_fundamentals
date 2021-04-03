@@ -29,3 +29,22 @@ set double_braces_var {string}
 puts "$double_braces_var , $double_quotes_var"
 
 
+
+# Variables are dynamically typed in tcl
+# so variable data types are changed automatically
+
+set dynamic_variable 10
+
+puts [expr $dynamic_variable + 50]
+
+set $dynamic_variable "string value"
+
+
+
+
+
+
+
+
+
+
