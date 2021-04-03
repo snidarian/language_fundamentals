@@ -1,0 +1,2 @@
+
+The (terpri) command stands for "print return" - the letters are scrambled for some reason.
