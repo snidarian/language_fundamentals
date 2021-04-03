@@ -25,17 +25,20 @@
 
 
 
-;; Now i'm goint to create a practical example that uses optional arguments
+;; Now i'm goint to create a less-than-practical example that uses optional arguments
 
 (defun average_numbers(a b &optional c d e f g h i j k) "Averages a list of numbers"
        (defvar list0 (list a b c d e f g h i j k))
        (terpri)
        (format t "list0 contains the items: ~a ~%" list0)
        (defvar count0 (list-length list0))
-       (format t "List items: ~d~%" count0))
+       (format t "There are ~d items in the list~%" count0))
 
 
 (average_numbers 13 15 16 17 20 21)
+
+
+
 
 
 
