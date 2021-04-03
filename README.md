@@ -3,6 +3,8 @@ Syntax basics in all languages stored as single atomic files
 
 
 
+
+
 #### Topics
 
 - General dicussion of language advantages/disadvantages
