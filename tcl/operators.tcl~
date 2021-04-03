@@ -1,0 +1,28 @@
+#!/usr/bin/tclsh
+
+# OPERATORS in tcl
+
+
+# ARITHMETIC OPERATORS
+
+set a 15
+set b 20
+
+# ADDITION
+puts [expr $a + $b]
+# SUBTRACTION
+puts [expr $a - $b]
+# MULTIPLICATION
+puts [expr $a * $b]
+# DIVISION
+puts [expr $a / $b]
+# MODULUS/REMAINDER
+puts [expr $a % $b]
+
+
+
+
+
+
+
+
