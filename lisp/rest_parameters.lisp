@@ -20,7 +20,7 @@
 
 ;; The below function finds the average of the arguments provided to it
 
-(defun get_average (&rest values) "Gets average of all arguments values and prints to stdout"
+(defun get_average (&rest values) "Gets and returns average of all arguments values"
        (defvar integer-list values)
        (defvar total 0.0)
        (defvar count (list-length values))
