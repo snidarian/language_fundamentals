@@ -9,3 +9,14 @@ while {$a < 72} {
 }
 
 puts "loop is terminated. a now equals $a"
+
+
+# another way to increment a while loop with 'incr'
+
+set b 0
+
+while { $b < 15 } {
+    puts "b = $b"
+    incr b
+}
+
