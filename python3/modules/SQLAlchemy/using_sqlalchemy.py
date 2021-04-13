@@ -83,4 +83,38 @@ session.commit()
 
 
 
+# finds person objects in Person table and returns their memory locations
+#print(session.query(Person).all())
+
+
+# return first person object in database
+person = session.query(Person).first()
+print(person.name)
+
+
+
+# Find all addresses whose person field is pointing to the person object
+session.query(Address).filter(Address.person == person).all()
+
+
+# Retrieve one Address whose person field is point to the person object
+session.query(Address).filter(Address.person == person).one()
+
+
+
+address = session.query(Address).filter(Address.person == person).one()
+address.post_code
+
+
+
+
+
+
+
+
+
+
+
+
+
 
