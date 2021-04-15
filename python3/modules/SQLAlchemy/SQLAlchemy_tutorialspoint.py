@@ -121,13 +121,40 @@ connection_object.execute(students.insert(), [
 
 
 # --------------------------------------------------------------------------------------------
-# SQLAlchemy Core - SELECTING ROWS
+# SQLAlchemy Core - SELECTING ROWS - Select statements
+
+
+# the select() method of the table object allows us to construct a SELECT expression
+
+selection_object = students.select()
+# notice the result when we print this
+print("selection_object appears as SELECT statement when printed:")
+print(str(selection_object))
+
+
+# You can use the selection_object as a parameter to .execute() method of connection_object
+result = connection_object.execute(selection_object)
+
+
+# We can fetch records using the fetchone() method
+row = result.fetchone()
+
+# This for loop prints all the results in the result variable
+for row in result:
+    print(row[0], row[2], row[1]) # this prints results in the order: (id, lastname, firstname)
 
 
 
+# WHERE CLAUSE
 
 
+selection_object = students.select().where(students.c.id>2) # here 'c' is an alias for column
+# Then we execute that selection object as the parameter for .execute() method and set it to a variable
+result = connection_object.execute(selection_object)
 
+print("Results from SELECT statement with WHERE clause")
+for row in result:
+    print(row)
 
 
 
