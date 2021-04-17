@@ -121,7 +121,7 @@ connection_object.execute(students.insert(), [
 
 
 # --------------------------------------------------------------------------------------------
-# SQLAlchemy Core - SELECTING ROWS - Select statements
+# SQLAlchemy Core - SELECTING ROWS - SELECT statements
 
 
 # the select() method of the table object allows us to construct a SELECT expression
@@ -155,6 +155,34 @@ result = connection_object.execute(selection_object)
 print("Results from SELECT statement with WHERE clause")
 for row in result:
     print(row)
+
+
+
+# --------------------------------------------------------------------------------------
+# using the text() function - allows you to run RAW SQL statements 
+
+from sqlalchemy import text
+
+text_object = text("SELECT * FROM students")
+result = connection_object.execute(text_object)
+
+print("RAW SQL statements using text() function")
+for row in result:
+    print(row)
+
+
+# The text()function requires Bound parameters in the named colon format. 
+# They are consistent regardless of database backend. 
+# To send values in for the parameters, we pass them into the execute() method as additional arguments.
+
+selection_object = text("SELECT students.name, students.lastname FROM students WHERE students.name BETWEEN :x AND :y;")
+print("Bind parameters SQL SELECT statement")
+result = connection_object.execute(selection_object, x = 'A', y = 'G').fetchall()
+
+for row in result:
+    print(row)
+
+
 
 
 
