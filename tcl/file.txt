@@ -1,6 +1,1 @@
-
-This is a file and it contain words
-
-This file has multiple lines too
-
-this is an example file.
+this is what I've wrote to this file
