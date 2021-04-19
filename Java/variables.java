@@ -1,4 +1,4 @@
-package scratch;
+
 
 public class variables {
 
@@ -20,7 +20,7 @@ public class variables {
         String b = "name";
         // Just like golang intellisense engine - java intellisense throws lint errors for unused variables.
         int c = 45;
-        // finale keyword creates immutable variable (read only)
+        // final keyword creates immutable variable (read only)
         final int d = 55;
         // notice the f after the float number.
         float e = 14.99f;
