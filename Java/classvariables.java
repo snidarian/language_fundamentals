@@ -6,6 +6,7 @@
 // 2. You must include the word 'static' in the declaration.
 // (the word static comes before the variable type)
 
+// You can either place class declarations at the beginning or end of a class definition
 
 public class classvariables {    
     static String helloMessage = "hello, world";
