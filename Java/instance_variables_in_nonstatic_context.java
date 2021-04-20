@@ -17,7 +17,7 @@ public class instance_variables_in_nonstatic_context {
     String strvar = "alsdjflakhsjdf";
 
     public static void main(String[] args) {
-        System.out.println(strvar);
+        //System.out.println(strvar);
     }
 
 

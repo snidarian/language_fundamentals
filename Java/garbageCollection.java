@@ -33,7 +33,7 @@ class Student{
 	// So you can still see that data after s2 is set to null
 	s3.showData();
 	// now s3 Student object is set to null and the data becomes eligible for garbage collection
-	s3=null;
+	//s3=null;
 	// Now you cannot display that data as it has been deleting at/before runtime
 	s3.showData();
     }
