@@ -1,0 +1,8 @@
+Java and C are both strongly-type languages
+Java and C are both compiled languages even though Java compiler only compiles down to java bytecode
+Java and C both require that statements be ended by semicolons
+Java and C both make the same distinction between strings "", and literals ''
+
+
+Disimilarities:
+In C the lengths of int, long, short are defined by the machine/compiler whereas in Java they never change
