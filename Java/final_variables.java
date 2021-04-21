@@ -11,7 +11,7 @@ public class final_variables {
         System.out.println("There are " + WEEKDAYS + " weekdays");
         System.out.println("There are " + WEEKEND_DAYS + " weekend days");
 
-
+        
 
     }
 
