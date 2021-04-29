@@ -1,0 +1,15 @@
+
+What is PHP ?
+
+First of all, you should know that PHP is an interpreted language. And as in the case of servers, the acronym PHP can have several meanings. In fact, when we talk about PHP, we can talk about either the language or the interpreter.
+Here, when we talk about installing PHP, it means that we will install the interpreter, in order to use the language.
+
+PHP (the language this time) is mainly used to make a site dynamic, that is to say that the user sends information to the server which returns the modified results according to this information. Conversely, a static site doesn’t adapt to information provided by a user. It’s saved as a file once for all, and will always deliver the same content.
+
+PHP is free, and maintained by the PHP Foundation, as well as Zend Enterprise, and various other companies (it should be noted that Zend is also the author of the famous Zend PHP framework, widely used and recognized in the world of ” business).
+
+It’s one of the most widely used programming languages, and it is even the most used for web programming, with about 79% market share.
+
+Again, all the skills you can acquire, on the language, or on the installation and configuration of the interpreter, will always be useful. So we can only advise you to learn the PHP, which is really a wonderful language and too often underestimated.
+
+
