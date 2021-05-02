@@ -12,6 +12,7 @@ echo "exit code = $var"
 # clear the gui after its usefulness elapses
 clear
 
+
 # the exit code value is used to determine which option was selected by the user.
 if [ $var -eq 0 ]; then
     echo "you said yes"
