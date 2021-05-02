@@ -9,7 +9,6 @@ var=$?
 
 echo "exit code = $var"
 
-
 # clear the gui after its usefulness elapses
 clear
 
