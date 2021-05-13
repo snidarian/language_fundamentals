@@ -3,25 +3,37 @@
 
 
 
-document.write("words")
-
-const body = document.body
-
-const div = document.createElement('div')
+// Many if not all these methods involve using the 'document' object that every web browser page contains in order to make changes to the pages html or CSS, or to provide interactivity and so forth. 
 
 
-div.innerHTML = "<p><strong>hello world</strong></p>"
 
-
-body.append(div)
-document.body.append(div)
+// Adding elements
 
 
 
 
-div.style.backgroundColor = "red"
+// creating elements
 
 
+
+// modifying element text
+
+
+
+
+// modifying element HTML
+
+
+
+// modifying element attributes
+
+
+
+// modifying data attributes
+
+
+
+// modifying element classes
 
 
 
