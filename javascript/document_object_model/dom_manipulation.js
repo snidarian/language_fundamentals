@@ -2,7 +2,6 @@
 
 
 
-
 // Many if not all these methods involve using the 'document' object that every web browser page contains in order to make changes to the pages html or CSS, or to provide interactivity and so forth. 
 
 
