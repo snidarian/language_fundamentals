@@ -10,3 +10,7 @@ select brand in Samsung Sony Iphone HuaWei LG; do
 done
 
 
+# define menu list
+select tribes in bingbong choochoo lakuchikuchi; do
+    echo "you chose $tribes"
+done
