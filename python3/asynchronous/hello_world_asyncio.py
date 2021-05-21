@@ -3,7 +3,7 @@
 
 import asyncio
 
-
+# A function that you introduce with 'async def function()' is a 'coroutine'
 async def count(number):
     print("part one of coroutine " + str(number))
     # The keyword 'await' passes function control back to the event loop
