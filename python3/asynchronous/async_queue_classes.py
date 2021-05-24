@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/pyhon3
 # illustrating the basic use of asyncios queue classes
 
 
