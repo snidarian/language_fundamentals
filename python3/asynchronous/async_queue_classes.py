@@ -18,7 +18,7 @@ async def randsleep(a: int = 1, b: int = 5, caller=None) -> None:
     await asyncio.sleep(i)
 
 async def produce(name: int, q: asyncio.Queue) -> None:
-    n = random.randint(0, 10)
+    n = random.randint(0, 10) # Number of queue items to produce
     for _ in it.repeat(None, n):  # Synchronous loop for each single producer
         await randsleep(caller=f"Producer {name}")
         i = await makeitem()
