@@ -19,7 +19,7 @@ reset = Fore.RESET
 
 # Argparse sets up with global scope for greater ease
 # Argparse takes care of the arguments passed to the program
-parser = argparse.ArgumentParser(description="Command line Wikipedia Utility. Returns summary paragraph by default")
+parser = argparse.ArgumentParser(description="Command line Wikipedia Utility. Returns summary paragraph by default. Enclose multi-word search terms in a pair of double quotes")
 
 parser.add_argument("query", help="Search term string", type=str, default="Wikipedia")
 parser.add_argument("--html", help="Get full page html", action='store_true')
