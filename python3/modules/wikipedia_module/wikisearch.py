@@ -7,15 +7,8 @@ from colorama import Fore, Style
 import lxml
 
 # ANSI Terminal color definitions
-r = Fore.RED
-w = Fore.WHITE
-b = Fore.BLUE
-g = Fore.GREEN
-bl = Fore.BLACK
-m = Fore.MAGENTA
-y = Fore.YELLOW
-c = Fore.CYAN
-reset = Fore.RESET
+r = Fore.RED; w = Fore.WHITE; b = Fore.BLUE; g = Fore.GREEN; bl = Fore.BLACK 
+m = Fore.MAGENTA; y = Fore.YELLOW; c = Fore.CYAN; reset = Fore.RESET
 
 # Argparse sets up with global scope for greater ease
 # Argparse takes care of the arguments passed to the program
@@ -24,7 +17,7 @@ parser = argparse.ArgumentParser(description="Command line Wikipedia Utility. Re
 parser.add_argument("query", help="Search term string", type=str, nargs='?', default='wikipedia')
 parser.add_argument("--html", help="Get full page html", action='store_true')
 parser.add_argument("-c", "--all-page-content", help="Returns page plain text", action='store_true')
-parser.add_argument("-r", "--random", help="Random article integer argument", type=int, default=3)
+parser.add_argument("-r", "--random", help="Random article integer argument", type=int)
 
 args = parser.parse_args()
 
@@ -52,8 +45,12 @@ def return_page_plain_text(search_term):
         print(f"PageError: '{search_term}' does not match any pages. Try again.")
         # if page not found calls suggest_term() function to suggest an orthographically similar page title
         suggest_term()
+    except wikipedia.exceptions.DisambiguationError:
+        print(r + "DisambiguationError: Result resolves to a disambiguation page" + reset)
+    except wikipedia.exceptions.HTTPTimeoutError:
+        print(r + "HTTPTimeoutError: Request to mediawiki server has timed out" + reset)
     except:
-        print("catchall error message; Investigate further")
+        print(r + "catchall error message; Investigate further" + reset)
 
 
 def suggest_term():
@@ -70,17 +67,26 @@ def suggest_term():
         pass
 
 # return quantity of random page summaries (10 max)
-def return_random_pages(quantity):
+def return_random_pages(quantity=3):
     random_results = wikipedia.random(pages=quantity)
-    print(random_results)
+    for item in random_results:
+        print(g + item + reset, end=", ")
     for term in random_results:
+        print("")
         # retrieve page content summary
-        page = wikipedia.page(title=term)
-        uppercased_term = term.upper()
-        print("---------------------------------------------------------", end="\n")
-        print(str(uppercased_term), end="\n\n")
-        print(page.summary)
-        print("---------------------------------------------------------", end="\n\n")
+        try:
+            page = wikipedia.page(title=term)
+            uppercased_term = term.upper()
+            print(m + "--------------------------------------------------------------------------" + reset, end="\n")
+            print(y + str(uppercased_term) + reset, end="\n\n")
+            print(page.summary)
+        except wikipedia.exceptions.DisambiguationError:
+            print(r + "Page resolves to a disambiguation page" + reset)
+        except wikipedia.exceptions.PageError:
+            print(r + "Page error encountered" + reset)
+        except:
+            print(r + "Catch all error exception. Error coult be an HTTPTimeoutError" + reset)
+    print("\n")
 
 
 def return_page_html(term):
@@ -93,7 +99,18 @@ def return_page_html(term):
 # Main Function
 def main():
     if args.random:
-        print("mark0")
+        if args.random > 10:
+            # asking for more than 10 random articles
+            print(f"random articles is > 10... you asked for {args.random} articles")
+            loaded_calls = (args.random // 10)
+            for _ in range(loaded_calls):
+                return_random_pages(10)
+            # number of odd-extra times to call random function based on --random integer
+            spare_calls = (args.random % 10)
+            return_random_pages(spare_calls)
+        else:
+            # Asking for less than or equal to 10 random articles
+            return_random_pages(args.random)
     elif args.all_page_content:
         return_page_plain_text(args.query)
     elif args.html:
