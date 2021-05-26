@@ -21,9 +21,10 @@ reset = Fore.RESET
 # Argparse takes care of the arguments passed to the program
 parser = argparse.ArgumentParser(description="Command line Wikipedia Utility. Returns summary paragraph by default. Enclose multi-word search terms in a pair of double quotes")
 
-parser.add_argument("query", help="Search term string", type=str, default="Wikipedia")
+parser.add_argument("query", help="Search term string", type=str, nargs='?', default='wikipedia')
 parser.add_argument("--html", help="Get full page html", action='store_true')
 parser.add_argument("-c", "--all-page-content", help="Returns page plain text", action='store_true')
+parser.add_argument("-r", "--random", help="Random article integer argument", type=int, default=3)
 
 args = parser.parse_args()
 
@@ -68,6 +69,19 @@ def suggest_term():
     else:
         pass
 
+# return quantity of random page summaries (10 max)
+def return_random_pages(quantity):
+    random_results = wikipedia.random(pages=quantity)
+    print(random_results)
+    for term in random_results:
+        # retrieve page content summary
+        page = wikipedia.page(title=term)
+        uppercased_term = term.upper()
+        print("---------------------------------------------------------", end="\n")
+        print(str(uppercased_term), end="\n\n")
+        print(page.summary)
+        print("---------------------------------------------------------", end="\n\n")
+
 
 def return_page_html(term):
     if args.html:
@@ -78,7 +92,9 @@ def return_page_html(term):
 
 # Main Function
 def main():
-    if args.all_page_content:
+    if args.random:
+        print("mark0")
+    elif args.all_page_content:
         return_page_plain_text(args.query)
     elif args.html:
         html = return_page_html(args.query)

@@ -15,5 +15,4 @@ def return_random_pages(quantity):
         print(page.summary)
         print("---------------------------------------------------------", end="\n\n")
 
-return_random_pages(3)
 
