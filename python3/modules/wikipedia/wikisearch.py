@@ -20,5 +20,3 @@ print(result.summary)
 
 
 
-
-
