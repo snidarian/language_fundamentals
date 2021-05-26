@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 # Command line program that returns the result of a wikipedia search
 
-
 import wikipedia
 import argparse
 from colorama import Fore, Style
@@ -24,6 +23,7 @@ parser = argparse.ArgumentParser(description="Command line Wikipedia Utility. Re
 
 parser.add_argument("query", help="Search term string", type=str, default="Wikipedia")
 parser.add_argument("--html", help="Get full page html", action='store_true')
+parser.add_argument("-c", "--all-page-content", help="Returns page plain text", action='store_true')
 
 args = parser.parse_args()
 
@@ -39,7 +39,20 @@ def make_page_search(search_term):
         # if page not found calls suggest_term() function to suggest an orthographically similar page title
         suggest_term()
     except:
-        print("Some sort of other error occurred. You must be unlucky. This is a catchall error message; Investigate further")
+        print("This is a catchall error message; Investigate further")
+
+
+def return_page_plain_text(search_term):
+    try:
+        page = wikipedia.WikipediaPage(title=search_term)
+        content = page.content
+        print(content)
+    except wikipedia.exceptions.PageError:
+        print(f"PageError: '{search_term}' does not match any pages. Try again.")
+        # if page not found calls suggest_term() function to suggest an orthographically similar page title
+        suggest_term()
+    except:
+        print("catchall error message; Investigate further")
 
 
 def suggest_term():
@@ -65,10 +78,13 @@ def return_page_html(term):
 
 # Main Function
 def main():
-    make_page_search(args.query)
-    if args.html:
+    if args.all_page_content:
+        return_page_plain_text(args.query)
+    elif args.html:
         html = return_page_html(args.query)
         print(html)
+    else:
+        make_page_search(args.query)
 
 
 # #################################################
