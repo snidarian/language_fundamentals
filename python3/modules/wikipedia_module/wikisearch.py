@@ -18,13 +18,18 @@ parser.add_argument("query", help="Search term string", type=str, nargs='?', def
 parser.add_argument("--html", help="Get full page html", action='store_true')
 parser.add_argument("-c", "--all-page-content", help="Returns page plain text", action='store_true')
 parser.add_argument("-r", "--random", help="Random article integer argument", type=int)
+parser.add_argument("-ru", "--russian", help="Sets language to Russian", action='store_true')
 
 args = parser.parse_args()
 
 # #####################################################################
 # DEFINITIONS
 
-def make_page_search(search_term):
+def make_page_search(search_term, russian_lang=False):
+    if russian_lang == True:
+        wikipedia.set_lang('ru')
+    else:
+        wikipedia.set_lang('en')
     try:
         result = wikipedia.page(title=search_term, auto_suggest=False)
         print(result.summary)
@@ -32,6 +37,8 @@ def make_page_search(search_term):
         print(f"PageError: '{search_term}' does not match any pages. Try again.")
         # if page not found calls suggest_term() function to suggest an orthographically similar page title
         suggest_term()
+    except wikipedia.exceptions.DisambiguationError:
+        print("The term you search lead to a disambiguation page..")
     except:
         print("This is a catchall error message; Investigate further")
 
@@ -98,7 +105,27 @@ def return_page_html(term):
 
 # Main Function
 def main():
+    russian_lang = False
+    # check if the query argument contains any russian letter
+    for letter in [ # Vowels listed first so for-loop breaks sooner saving time
+        'а', 'е', 'ё', 
+        'и', 'о', 'у', 
+        'ы', 'э', 'ю', 
+        'я', 'б', 'в', 
+        'г', 'д', 'ж', 
+        'з', 'к', 'л', 
+        'м', 'н', 'п', 
+        'р', 'с', 'т', 
+        'ф', 'х', 'ц', 
+        'ч', 'ш', 'щ']:
+        if letter in args.query:
+            russian_lang = True
+            break
     if args.random:
+        if args.russian:
+            wikipedia.set_lang('ru')
+        else:
+            wikipedia.set_lang('en')
         if args.random > 10:
             # asking for more than 10 random articles
             print(f"random articles is > 10... you asked for {args.random} articles")
@@ -117,7 +144,7 @@ def main():
         html = return_page_html(args.query)
         print(html)
     else:
-        make_page_search(args.query)
+        make_page_search(args.query, russian_lang)
 
 
 # #################################################

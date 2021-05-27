@@ -4,7 +4,15 @@ import wikipedia
 
 
 
-print(wikipedia.languages())
+#print(wikipedia.languages())
 
 
+
+wikipedia.set_lang('ru')
+
+
+page = wikipedia.page(title="мужчина")
+
+
+print(page.summary)
 
