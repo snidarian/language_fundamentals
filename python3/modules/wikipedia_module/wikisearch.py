@@ -43,7 +43,9 @@ def make_page_search(search_term, russian_lang=False):
         print("This is a catchall error message; Investigate further")
 
 
-def return_page_plain_text(search_term):
+def return_page_plain_text(search_term, russian_lang=False):
+    if russian_lang == True:
+        wikipedia.set_lang('ru')
     try:
         page = wikipedia.WikipediaPage(title=search_term)
         content = page.content
@@ -121,6 +123,10 @@ def main():
         if letter in args.query:
             russian_lang = True
             break
+    if russian_lang == True:
+        wikipedia.set_lang('ru')
+    else:
+        wikipedia.set_lang('en')
     if args.random:
         if args.russian:
             wikipedia.set_lang('ru')
@@ -139,7 +145,7 @@ def main():
             # Asking for less than or equal to 10 random articles
             return_random_pages(args.random)
     elif args.all_page_content:
-        return_page_plain_text(args.query)
+        return_page_plain_text(args.query, russian_lang)
     elif args.html:
         html = return_page_html(args.query)
         print(html)
