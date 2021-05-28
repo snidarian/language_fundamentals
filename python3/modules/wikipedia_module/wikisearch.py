@@ -25,11 +25,7 @@ args = parser.parse_args()
 # #####################################################################
 # DEFINITIONS
 
-def make_page_search(search_term, russian_lang=False):
-    if russian_lang == True:
-        wikipedia.set_lang('ru')
-    else:
-        wikipedia.set_lang('en')
+def make_page_search(search_term):
     try:
         result = wikipedia.page(title=search_term, auto_suggest=False)
         print(result.summary)
@@ -40,12 +36,12 @@ def make_page_search(search_term, russian_lang=False):
     except wikipedia.exceptions.DisambiguationError:
         print("The term you search lead to a disambiguation page..")
     except:
-        print("This is a catchall error message; Investigate further")
+        print("Catch-all error message; Investigate further. VPN might be to blame")
 
 
 def return_page_plain_text(search_term, russian_lang=False):
-    if russian_lang == True:
-        wikipedia.set_lang('ru')
+    # if russian_lang == True:
+    #     wikipedia.set_lang('ru')
     try:
         page = wikipedia.WikipediaPage(title=search_term)
         content = page.content
@@ -145,12 +141,12 @@ def main():
             # Asking for less than or equal to 10 random articles
             return_random_pages(args.random)
     elif args.all_page_content:
-        return_page_plain_text(args.query, russian_lang)
+        return_page_plain_text(args.query)
     elif args.html:
         html = return_page_html(args.query)
         print(html)
     else:
-        make_page_search(args.query, russian_lang)
+        make_page_search(args.query)
 
 
 # #################################################
