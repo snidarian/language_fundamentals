@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 # Command line program that returns the result of a wikipedia search
+# supports searching in russian and english
+# supports random page generation in English and Russian
+# can dump full wiki page content or merely page summaries to stdout in Russian or English
 
 import wikipedia
 import argparse
@@ -129,7 +132,7 @@ def main():
         else:
             wikipedia.set_lang('en')
         if args.random > 10:
-            # asking for more than 10 random articles
+            # asking for more than 10 random articles - (because api only supports requests for 10 random articles at a time)
             print(f"random articles is > 10... you asked for {args.random} articles")
             loaded_calls = (args.random // 10)
             for _ in range(loaded_calls):
