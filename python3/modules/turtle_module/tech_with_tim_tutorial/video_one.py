@@ -4,9 +4,7 @@
 
 import turtle
 
-
 turtle_object = turtle.Turtle()
-
 
 
 turtle_object.color('green')
