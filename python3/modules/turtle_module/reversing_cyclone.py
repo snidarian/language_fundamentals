@@ -7,7 +7,7 @@ import math
 pen = turtle.Turtle()
 
 pen.color('green', 'yellow')
-turtle.bgcolor('red')
+pen.getscreen().bgcolor('red')
 pen.speed(0)
 
 while True:
