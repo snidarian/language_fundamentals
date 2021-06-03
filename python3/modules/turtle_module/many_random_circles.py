@@ -50,7 +50,7 @@ def draw_random_circle() -> None:
 
 # while loop that continually calls draw circle function and recolors screen
 while True:
-    turtle.bgcolor(color_list[random.randint(0, (len(color_list) - 1))])
+    turtle_object.getscreen().bgcolor(color_list[random.randint(0, (len(color_list) - 1))])
     turtle_object.shape('turtle')
     turtle_object.speed(0)
     # each time background color changes draw variable amount of circles with a for loop in range(random integer) that calls the draw_random_circle() function
