@@ -19,6 +19,7 @@ def draw_square(size) -> None:
 
 
 
+
 draw_square(70)
 
 
