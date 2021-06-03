@@ -9,7 +9,7 @@ pen.speed(0)
 
 
 def draw_square(size) -> None:
-    if size < 3:
+    if size < 1:
         return
     else:
         for _ in range(4):
@@ -20,7 +20,7 @@ def draw_square(size) -> None:
 
 
 
-draw_square(70)
+draw_square(80)
 
 
 turtle.done()
