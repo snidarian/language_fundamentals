@@ -9,7 +9,7 @@ pen.color('red')
 turtle.bgcolor('blue')
 
 
-def draw_star() -> None:
+def draw_intricate_circle() -> None:
     for _ in range(185):
         pen.forward(600)
         pen.left(179)
@@ -18,7 +18,7 @@ def draw_star() -> None:
 
 
 while True:
-    draw_star()
+    draw_intricate_circle()
     pen.clear()
     
 
