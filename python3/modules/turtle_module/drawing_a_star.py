@@ -8,7 +8,7 @@ import random as r
 pen = turtle.Turtle()
 turtle.bgcolor('blue')
 # hex color values are accepted by turtle
-pen.color('#3C9118')
+pen.color('#7fffd4')
 pen.width(1)
 pen.speed(7)
 pen.setheading(180)
@@ -16,9 +16,11 @@ pen.setheading(180)
 
 def draw_star(scale) -> None:
     size = (scale * 100)
+    #pen.begin_fill()
     for _ in range(5):
         pen.forward(size)
         pen.left(144)
+    #pen.end_fill()
     return (scale + 1)
 
 
