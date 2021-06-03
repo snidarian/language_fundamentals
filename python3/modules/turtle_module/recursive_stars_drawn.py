@@ -7,8 +7,7 @@ import random as r
 
 pen = turtle.Turtle()
 turtle.bgcolor('blue')
-# hex color values are accepted by turtle
-pen.color('#3C9118')
+pen.color('yellow')
 pen.width(1)
 pen.speed(7)
 pen.setheading(180)
