@@ -7,7 +7,7 @@ import time
 pen = turtle.Turtle()
 pen.speed(7)
 color_list = ['red', 'blue', 'green', 'yellow', 'cyan', 'black', 'white', 'teal', 'maroon', 'pink']
-turtle.bgcolor(r.choice(color_list))
+pen.getscreen().bgcolor(r.choice(color_list))
 
 def draw_star(x_value: int, y_value: int, scale: int, outline_color: str, fill_color: str) -> None:
     pen.penup()
