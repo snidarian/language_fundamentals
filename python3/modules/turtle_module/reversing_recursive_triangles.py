@@ -8,7 +8,7 @@ pen.getscreen().bgcolor('black')
 pen.speed(0)
 
 
-# every successive recursive function call reverses the direction of the triangles
+# every successive recursive function call reverses the direction of the triangles using "reversed" boolean variable
 def draw_triangle(size: float, reversed: bool) -> None:
     if reversed == True:
         pen.color('blue')
