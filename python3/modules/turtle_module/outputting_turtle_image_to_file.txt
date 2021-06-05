@@ -1,0 +1,21 @@
+# basic syntax
+
+
+import turtle
+
+
+pen = turtle.Turtle()
+
+
+# Draw everything you want to draw
+
+
+# this is how you create a .ps file
+screen = pen.getscreen()
+cv = screen.getcanvas()
+
+cv.postscript(file="File_name.ps", colormode='color')
+
+
+
+turtle.done()

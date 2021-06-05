@@ -18,16 +18,13 @@ def draw_triangle(size) -> None:
     else:
         for _ in range(3):
             pen.forward(size * 1.5)
-            draw_triangle(size/2)
             pen.left(120)
+            draw_triangle(size/2)
+            
 
 
 
 
-draw_triangle(150)
+draw_triangle(200)
 
-
-
-
-turtle.done()
 
