@@ -10,11 +10,12 @@ pen.getscreen().bgcolor('blue')
 pen.speed(0)
 
 
-color_set = ['red', 'yellow', 'orange', 'green', 'purple', 'cyan', 'white', 'maroon', 'pink']
+color_set = ['red', 'yellow', 'orange', 'green', 'purple', 'cyan', 'white', 'maroon', 'pink', 'black']
 
+pen.right(180)
 
 def саувастика(size, index) -> None:
-    if size < 5:
+    if size < 3:
         return
     else:
         for _ in range(4):
