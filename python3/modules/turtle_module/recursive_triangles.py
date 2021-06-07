@@ -25,6 +25,7 @@ def draw_triangle(size) -> None:
 
 
 
-draw_triangle(200)
+draw_triangle(250)
 
 
+turtle.done()
