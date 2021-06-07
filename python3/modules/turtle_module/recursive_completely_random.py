@@ -8,7 +8,7 @@ import random as r
 pen = t.Turtle()
 pen.color('red')
 
-color_set = ['red', 'yellow', 'orange', 'green', 'purple', 'cyan', 'white', 'maroon', 'pink', 'black']
+color_set = ['red', 'yellow' 'blue', 'orange', 'green', 'purple', 'cyan', 'white', 'maroon', 'pink', 'black']
 pen.getscreen().bgcolor(r.choice(color_set))
 pen.speed(0)
 
