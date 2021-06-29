@@ -4,10 +4,7 @@
 
 
 // store synth function in x
-x = { SinOsc.ar(700) };
-
-// reference to the synth executing the function
-x = x.play;
+(x = { SinOsc.ar(exprand(400, 750)) }.play;)
 
 
 // to free the synth up (stop it from producing sound)
