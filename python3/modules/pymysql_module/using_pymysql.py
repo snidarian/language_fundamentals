@@ -4,20 +4,16 @@
 
 import pymysql
 
-user_id = input("Enter username: ")
-password = input("Enter password: ")
-db = pymysql.connect("localhost", user_id, password, "testdb")
 
+password = input("Enter password: ")
+db = pymysql.connect("localhost", "root", password, "testdb")
 
 cursor = db.cursor()
 
 
-cursor.execute("show tables;")
+result = cursor.execute("select authentication_string from user;")
 
-
-
-
-
+print(result)
 
 
 
