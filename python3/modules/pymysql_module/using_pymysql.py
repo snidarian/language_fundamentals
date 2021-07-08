@@ -3,15 +3,16 @@
 
 
 import pymysql
+from getpass import getpass
 
 
-password = input("Enter password: ")
+password = getpass(prompt="MySQL pass for root: ")
 db = pymysql.connect("localhost", "root", password, "testdb")
 
 cursor = db.cursor()
 
 
-result = cursor.execute("select authentication_string from user;")
+result = cursor.execute("show tables;")
 
 print(result)
 
