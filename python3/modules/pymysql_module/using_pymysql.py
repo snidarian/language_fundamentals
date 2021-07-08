@@ -6,15 +6,20 @@ import pymysql
 from getpass import getpass
 
 
-password = getpass(prompt="MySQL pass for root: ")
+password = getpass(prompt="MySQL root password: ")
 db = pymysql.connect("localhost", "root", password, "testdb")
 
 cursor = db.cursor()
 
 
-result = cursor.execute("show tables;")
+cursor.execute("SELECT VERSION();")
 
-print(result)
+
+data = cursor.fetchone()
+print("Database Version : %s " % data)
+
+
+
 
 
 
