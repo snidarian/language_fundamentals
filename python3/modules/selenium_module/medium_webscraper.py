@@ -74,6 +74,8 @@ search_box.send_keys(search_term)
 search_box.send_keys(Keys.RETURN)
 
 
+whatevs = input("Press enter to continue: ")
+
 time.sleep(50)
 print("mark3")
 
