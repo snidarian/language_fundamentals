@@ -6,17 +6,18 @@ from machine import PWM, Pin
 import utime
 
 # an led is connected to GP0 and a Ground pin in connected to ground
-
+# initialize the pin as an output pin
 led0 = Pin(0, Pin.OUT)
 
+# setup the pin as a PWM pin.
 pwm = PWM(led0)
-pwm.duty_u16(32768)
-utime.sleep(3)
+# Set the frequency in Hz
+pwm.freq(500)
 
 count = 0
-
 while count < 5:
     for adjustment in range(65353):
+        # change duty cycle with to 16bit integer value
         pwm.duty_u16(adjustment)
         utime.sleep(0.0001)
     for adjustment in range(65353, 0, -1):
