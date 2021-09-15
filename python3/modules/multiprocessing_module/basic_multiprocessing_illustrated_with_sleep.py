@@ -39,6 +39,9 @@ p4.join()
 p5.join()
 
 
+
+
+
 finish = time.perf_counter()
 print(f"Finished at {finish}")
 
