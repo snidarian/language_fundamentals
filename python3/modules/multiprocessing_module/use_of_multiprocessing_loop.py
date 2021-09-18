@@ -26,7 +26,6 @@ for _ in range(10):
 
 
 
-
 finish = time.perf_counter()
 
 time_elapsed = round((finish-start), 2)

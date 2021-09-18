@@ -3,23 +3,28 @@
 
 import time
 import multiprocessing
+import os
+
+
+GLOBAL_VARIABLE_EXAMPLE = "Test_string"
 
 
 start = time.perf_counter()
 print(f"Starting at {start}")
 
 
-def do_something():
-    print('Sleeping for 1 second')
+# This function will have access to globally defined variables
+def do_something(proc_number):
+    print(f'PID {os.getpid()}: Child Proc {proc_number} - Sleeping for 1 second')
     time.sleep(1)
-    print('Done Sleeping')
+    print(f'PID {os.getpid()}: Child Proc {proc_number} - Done Sleeping')
 
 # Define as many processes as needed
-p1 = multiprocessing.Process(target=do_something)
-p2 = multiprocessing.Process(target=do_something)
-p3 = multiprocessing.Process(target=do_something)
-p4 = multiprocessing.Process(target=do_something)
-p5 = multiprocessing.Process(target=do_something)
+p1 = multiprocessing.Process(target=do_something, args=(1,))
+p2 = multiprocessing.Process(target=do_something, args=(2,))
+p3 = multiprocessing.Process(target=do_something, args=(3,))
+p4 = multiprocessing.Process(target=do_something, args=(4,))
+p5 = multiprocessing.Process(target=do_something, args=(5,))
 
 
 # START() = Start child process
